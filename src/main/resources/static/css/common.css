@@ -1,0 +1,12 @@
+body{
+    background: cornsilk;
+    font-size: larger;
+    font-style: italic;
+}
+#warning{
+    color: red;
+}
+input{
+    padding: 5px;
+    margin-bottom: 4px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="/css/common.css"  rel="stylesheet"  type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Выберите папку</p>
+<form class="container" th:method="POST"  th:action="@{/}">
+
+    <!--<input name="login" type="text" placeholder="Введите логин">-->
+    <input name="folder" type="text" placeholder="Введите полный путь к папке с файлами" id="folder">
+    <p id="warning" th:if="${warning}" th:text="${warning}"></p>
+    <br>
+    <input  name="Кнопка" type="submit" class="dws-submit" value="Отправить">
+
+
+</form>
+</body>
+</html>
