@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="/css/common.css"  rel="stylesheet"  type="text/css"/>
+    <link href="/css/common.css" rel="stylesheet" type="text/css"/>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -9,14 +9,24 @@
 <div id="showfile" th:each="file : ${fileList}">
     <p th:text="${file}"></p>
 </div>
-<form class="container" th:method="POST"  th:action="@{/rename}">
+<form class="container" th:method="POST" th:action="@{/rename(dir=${currentDir})}">
 
     <!--<input name="login" type="text" placeholder="Введите логин">-->
-    <input name="reg1" type="text" placeholder="первое регулярное выражение" >
+    <p><b>Какой использовать тип переименования</b><Br>
+        <input type="radio" name="otherFile" value="true"> Переименование из другого файла<Br>
+        <input type="radio" name="regex" value="true"> Переименование по регулярным выражениям<Br>
+        <input type="radio" name="pat" value="true"> Заданный паттерн<Br>
+        <!--    <input type="radio" name="browser" value="firefox"> Firefox<Br>-->
+    </p>
+    <input name="fileSource" type="text" placeholder="введите источник файла">
     <br>
-    <input name="reg2" type="text" placeholder="второе регулярное выражение" >
+    <input name="pattern" type="text" placeholder="введите паттерн">
     <br>
-    <input  name="Кнопка" type="submit" class="dws-submit" value="Отправить">
+    <input name="reg1" type="text" placeholder="первое регулярное выражение">
+    <br>
+    <input name="reg2" type="text" placeholder="второе регулярное выражение">
+    <br>
+    <input name="Кнопка" type="submit" class="dws-submit" value="Отправить">
 
 
 </form>
